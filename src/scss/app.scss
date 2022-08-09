@@ -5,3 +5,105 @@
   font-family: $font-family;
   color: $desaturated-red;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  background: $white-gradient;
+
+  header {
+    margin: 2rem;
+
+    img {
+      height: 20px;
+    }
+  }
+
+  .hero-image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  main {
+    margin: 1.75rem;
+
+    h1 {
+      font-weight: 300;
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+
+      .black {
+        font-weight: 600;
+        color: black;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 1.4rem;
+    }
+
+    form {
+      border: 1px solid $desaturated-red;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 2.87rem;
+      border-radius: 1.5rem;
+      align-items: center;
+
+      input[type=email] {
+        background-color: unset;
+        border: unset;
+        margin-left: 1.5rem;
+
+        &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: $desaturated-red;
+          //opacity: 1; /* Firefox */
+        }
+
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: $desaturated-red;
+        }
+
+        &::-ms-input-placeholder { /* Microsoft Edge */
+          color: $desaturated-red;
+        }
+      }
+
+      button {
+        background: $peach-gradient;
+        border: unset;
+        border-radius: 1.5rem;
+        height: 3rem;
+        width: 4rem;
+        margin-right: -0.1rem;
+
+        img {
+          height: 20px;
+        }
+
+        &:active {
+          filter: brightness(1.25);
+
+        }
+      }
+    }
+  }
+
+  footer {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+}
