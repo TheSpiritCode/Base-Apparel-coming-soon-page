@@ -1,5 +1,6 @@
 @import "variables";
 
+//TODO: need to rebuild whole thing. Start from scratch. Flexbox isn't good
 :root {
   font-size: $font-size;
   font-family: $font-family;
@@ -11,10 +12,14 @@ body {
   flex-direction: column;
   margin: 0;
   min-height: 100vh;
+  height: 100vh;
   background: $white-gradient;
+  min-width: 325px;
 
   header {
     margin: 2rem;
+    //display: flex;
+
 
     img {
       height: 20px;
@@ -23,14 +28,17 @@ body {
 
   .hero-image {
     width: 100%;
+    //display: flex;
 
     img {
-      width: 100%;
+      //width: 100%;
     }
   }
 
   main {
     margin: 1.75rem;
+    //display: flex;
+    flex-direction: column;
 
     h1 {
       font-weight: 300;
@@ -68,6 +76,7 @@ body {
 
         &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
           color: $desaturated-red;
+          font-family: $font-family;
           //opacity: 1; /* Firefox */
         }
 
@@ -105,5 +114,67 @@ body {
     position: absolute;
     text-align: center;
     width: 100%;
+  }
+
+  @media (min-width: 999.98px) {
+    & {
+      background-image: url("/images/bg-pattern-desktop.svg");
+      background-position: left;
+      flex-wrap: wrap;
+
+      .hero-image {
+        order: 3;
+        height: 100%;
+        width: unset;
+
+        img {
+          object-fit: contain;
+          height: 100%;
+          //max-width: 47%;
+          object-position: right;
+        }
+      }
+
+      header {
+        img {
+          margin-top: 2rem;
+          margin-left: 9rem;
+          height: 31px;
+        }
+      }
+
+      main {
+        order: 2;
+
+        &>* {
+          //max-width: 445px;
+          margin-left: 9rem;
+          margin-right: 10.5rem;
+
+
+        }
+
+        h1, p {
+          text-align: left;
+        }
+
+        h1 {
+          font-size: 4rem;
+          letter-spacing: 1.5rem;
+        }
+
+        p {
+          margin-bottom: 2rem;
+        }
+      }
+
+      header,
+      main {
+        width: 53%;
+
+      }
+
+
+    }
   }
 }

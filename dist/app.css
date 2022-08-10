@@ -10,7 +10,9 @@ body {
   flex-direction: column;
   margin: 0;
   min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 100%, 98%));
+  min-width: 325px;
 }
 body header {
   margin: 2rem;
@@ -21,11 +23,9 @@ body header img {
 body .hero-image {
   width: 100%;
 }
-body .hero-image img {
-  width: 100%;
-}
 body main {
   margin: 1.75rem;
+  flex-direction: column;
 }
 body main h1 {
   font-weight: 300;
@@ -60,9 +60,11 @@ body main form input[type=email] {
 }
 body main form input[type=email]::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: hsl(0deg, 36%, 70%);
+  font-family: "Josefin Sans", sans-serif;
 }
 body main form input[type=email]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: hsl(0deg, 36%, 70%);
+  font-family: "Josefin Sans", sans-serif;
 }
 body main form input[type=email]:-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: hsl(0deg, 36%, 70%);
@@ -89,4 +91,49 @@ body footer {
   position: absolute;
   text-align: center;
   width: 100%;
+}
+@media (min-width: 999.98px) {
+  body {
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-position: left;
+    flex-wrap: wrap;
+  }
+  body .hero-image {
+    order: 3;
+    height: 100%;
+    width: unset;
+  }
+  body .hero-image img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    height: 100%;
+    -o-object-position: right;
+       object-position: right;
+  }
+  body header img {
+    margin-top: 2rem;
+    margin-left: 9rem;
+    height: 31px;
+  }
+  body main {
+    order: 2;
+  }
+  body main > * {
+    margin-left: 9rem;
+    margin-right: 10.5rem;
+  }
+  body main h1, body main p {
+    text-align: left;
+  }
+  body main h1 {
+    font-size: 4rem;
+    letter-spacing: 1.5rem;
+  }
+  body main p {
+    margin-bottom: 2rem;
+  }
+  body header,
+body main {
+    width: 53%;
+  }
 }
