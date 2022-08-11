@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/grid-page-vanilla-js-for-validation-FKfl1cbHno](https://www.frontendmentor.io/solutions/grid-page-vanilla-js-for-validation-FKfl1cbHno)
 - Live Site URL: [https://thespiritcode.github.io/Base-Apparel-coming-soon-page/](https://thespiritcode.github.io/Base-Apparel-coming-soon-page/)
 
 ## My process
