@@ -6,28 +6,33 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   margin: 0;
-  min-height: 100vh;
-  height: 100vh;
-  background: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 100%, 98%));
-  min-width: 325px;
 }
-body header {
+body .container {
+  display: grid;
+  grid-template-areas: "hd" "hi" "main";
+  min-width: 375px;
+}
+body .container header {
+  grid-area: hd;
   margin: 2rem;
 }
-body header img {
+body .container header img {
   height: 20px;
 }
-body .hero-image {
+body .container .hero-image {
+  grid-area: hi;
   width: 100%;
 }
-body main {
+body .container .hero-image img {
+  width: 100%;
+}
+body .container main {
+  grid-area: main;
   margin: 1.75rem;
   flex-direction: column;
 }
-body main h1 {
+body .container main h1 {
   font-weight: 300;
   font-size: 3rem;
   text-transform: uppercase;
@@ -35,44 +40,51 @@ body main h1 {
   text-align: center;
   margin-bottom: 1rem;
 }
-body main h1 .black {
+body .container main h1 .black {
   font-weight: 600;
   color: black;
 }
-body main p {
+body .container main p {
   text-align: center;
   font-size: 0.9rem;
   line-height: 1.4rem;
 }
-body main form {
+body .container main form .input-wrapper {
   border: 1px solid hsl(0deg, 36%, 70%);
+  border-radius: 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 2.87rem;
-  border-radius: 1.5rem;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
 }
-body main form input[type=email] {
+body .container main form .input-wrapper .error_img {
+  display: none;
+}
+body .container main form .input-wrapper input[type=email] {
   background-color: unset;
   border: unset;
   margin-left: 1.5rem;
 }
-body main form input[type=email]::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+body .container main form .input-wrapper input[type=email]::-moz-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: hsl(0deg, 36%, 70%);
   font-family: "Josefin Sans", sans-serif;
 }
-body main form input[type=email]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+body .container main form .input-wrapper input[type=email]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: hsl(0deg, 36%, 70%);
   font-family: "Josefin Sans", sans-serif;
 }
-body main form input[type=email]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+body .container main form .input-wrapper input[type=email]:-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: hsl(0deg, 36%, 70%);
+  font-family: "Josefin Sans", sans-serif;
 }
-body main form input[type=email]::-ms-input-placeholder { /* Microsoft Edge */
+body .container main form .input-wrapper input[type=email]::-ms-input-placeholder { /* Microsoft Edge */
   color: hsl(0deg, 36%, 70%);
+  font-family: "Josefin Sans", sans-serif;
 }
-body main form button {
+body .container main form .input-wrapper button {
   background: linear-gradient(135deg, hsl(0deg, 80%, 86%), hsl(0deg, 74%, 74%));
   border: unset;
   border-radius: 1.5rem;
@@ -80,60 +92,92 @@ body main form button {
   width: 4rem;
   margin-right: -0.1rem;
 }
-body main form button img {
+body .container main form .input-wrapper button img {
   height: 20px;
 }
-body main form button:active {
+body .container main form .input-wrapper button:active {
   filter: brightness(1.25);
+  box-shadow: 0 5px 3rem -1rem hsl(0deg, 93%, 68%);
+}
+body .container main form .error-message {
+  margin-left: 1.5rem;
+  color: hsl(0deg, 93%, 68%);
+  display: none;
+}
+body .container main form.error .input-wrapper {
+  border-color: hsl(0deg, 93%, 68%);
+  border-width: 2px;
+}
+body .container main form.error .error_img, body .container main form.error .error-message {
+  display: inline;
+}
+@media (min-width: 999.98px) {
+  body {
+    background: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 100%, 98%));
+  }
+  body .container {
+    background-image: url("/images/bg-pattern-desktop.svg");
+    grid-template-areas: "hd hi" "main hi";
+    grid-gap: 0;
+    grid-auto-flow: dense;
+  }
+  body .container header {
+    margin-top: 3rem;
+    margin-left: 8rem;
+    max-width: 53%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-bottom: 0;
+  }
+  body .container header img {
+    height: 30px;
+  }
+  body .container main {
+    margin: 0;
+    padding-right: 8rem;
+    padding-left: 8rem;
+    align-items: center;
+    display: flex;
+    justify-content: left;
+  }
+  body .container main h1, body .container main p {
+    padding-right: 9rem;
+  }
+  body .container main h1 {
+    font-size: 4rem;
+    text-align: left;
+  }
+  body .container main p {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  body .container main form {
+    width: 75%;
+    align-self: start;
+    margin-top: 2rem;
+  }
+  body .container main form .input-wrapper {
+    width: 100%;
+  }
+  body .container main form .input-wrapper input {
+    width: 60%;
+  }
+  body .container main form .input-wrapper button {
+    width: 6rem;
+  }
+  body .container .hero-image {
+    width: unset;
+  }
+  body .container .hero-image img {
+    height: 100%;
+    width: unset;
+  }
 }
 body footer {
   bottom: 0;
   position: absolute;
   text-align: center;
   width: 100%;
-}
-@media (min-width: 999.98px) {
-  body {
-    background-image: url("/images/bg-pattern-desktop.svg");
-    background-position: left;
-    flex-wrap: wrap;
-  }
-  body .hero-image {
-    order: 3;
-    height: 100%;
-    width: unset;
-  }
-  body .hero-image img {
-    -o-object-fit: contain;
-       object-fit: contain;
-    height: 100%;
-    -o-object-position: right;
-       object-position: right;
-  }
-  body header img {
-    margin-top: 2rem;
-    margin-left: 9rem;
-    height: 31px;
-  }
-  body main {
-    order: 2;
-  }
-  body main > * {
-    margin-left: 9rem;
-    margin-right: 10.5rem;
-  }
-  body main h1, body main p {
-    text-align: left;
-  }
-  body main h1 {
-    font-size: 4rem;
-    letter-spacing: 1.5rem;
-  }
-  body main p {
-    margin-bottom: 2rem;
-  }
-  body header,
-body main {
-    width: 53%;
-  }
 }

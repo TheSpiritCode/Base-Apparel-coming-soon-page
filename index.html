@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="dist/app.css">
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <script src="dist/index.js" ></script>
 
     <title>Frontend Mentor | Base Apparel coming soon page</title>
 
@@ -23,30 +24,36 @@
     </style>
 </head>
 <body>
-<header>
-    <img src="images/logo.svg"/>
-</header>
-<section class="hero-image" role="banner">
-    <picture>
-        <source srcset="images/hero-desktop.jpg" media="(min-width: 1000px)">
-        <source srcset="images/hero-mobile.jpg" media="(max-width: 999.98px)">
-        <img src="images/hero-mobile.jpg">
-    </picture>
-</section>
-<main>
+<div class="container">
+    <header>
+        <img src="images/logo.svg" alt="Base Apparel"/>
+    </header>
+    <section class="hero-image" role="banner">
+        <picture>
+            <source srcset="images/hero-desktop.jpg" media="(min-width: 1000px)">
+            <source srcset="images/hero-mobile.jpg" media="(max-width: 999.98px)">
+            <img src="images/hero-mobile.jpg" alt="Hero image">
+        </picture>
+    </section>
+    <main>
 
-    <h1>We're <span class="black">coming soon</span></h1>
+        <h1>We're <span class="black">coming soon</span></h1>
 
-    <p>
-        Hello fellow shoppers! We're currently building our new fashion store.
-        Add your email below to stay up-to-date with announcements and our launch deals.
-    </p>
+        <p>
+            Hello fellow shoppers! We're currently building our new fashion store.
+            Add your email below to stay up-to-date with announcements and our launch deals.
+        </p>
 
-    <form>
-        <input type="email" required="required" placeholder="Email Address"/>
-        <button type="submit"><img src="images/icon-arrow.svg" alt="Submit form"/> </button>
-    </form>
-</main>
+        <form id="form" novalidate>
+            <div class="input-wrapper">
+                <input id="email" type="email" name="email" aria-label="Email address" placeholder="Email Address" required />
+                <img class="error_img" src="/images/icon-error.svg" alt="error icon"/>
+                <button type="submit" aria-label="Submit form"><img src="images/icon-arrow.svg" alt="Submit form"/></button>
+            </div>
+            <small class="error-message">Please provide a valid email</small>
+        </form>
+    </main>
+</div>
 <!--<footer>-->
 <!--    <p class="attribution">-->
 <!--        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.-->
