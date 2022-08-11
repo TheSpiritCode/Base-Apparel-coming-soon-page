@@ -116,7 +116,7 @@ body .container main form.error .error_img, body .container main form.error .err
     background: linear-gradient(135deg, hsl(0deg, 0%, 100%), hsl(0deg, 100%, 98%));
   }
   body .container {
-    background-image: url("/images/bg-pattern-desktop.svg");
+    background-image: url("images/bg-pattern-desktop.svg");
     grid-template-areas: "hd hi" "main hi";
     grid-gap: 0;
     grid-auto-flow: dense;
